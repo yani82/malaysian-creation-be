@@ -1,0 +1,10 @@
+Category 
+has_many :items 
+:name - string 
+
+
+Items
+belongs_to :category 
+:category_id - integer,
+:description - string, 
+:price - float 
