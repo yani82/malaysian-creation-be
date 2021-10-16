@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+category = Category.create(name: 'Handicrafts') 
+
+item = Item.create(category_id: 1, name: 'Wau', description: 'Traditional handmade kite', price: 75.00)
