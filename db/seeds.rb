@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-category = Category.create(name: 'Handicrafts') 
+# Category.destroy_all
+# Item.destroy_all
+
+category = Category.create(name: 'Handicrafts')
+category_two = Category.create(name: 'Textiles') 
 
 item = Item.create(category_id: 1, name: 'Wau', description: 'Traditional handmade kite', price: 75.00)
+item_two = Item.create(category_id: 2, name: 'Batik', description: 'A technique of wax-resist dyeing applied to the whole cloth', price: 99.00)
