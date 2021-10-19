@@ -5,7 +5,7 @@ class Api::V1::ItemsController < ApplicationController
     # /api/v1/categories/1/items 
     
     def index 
-        items = item.all
+        items = categories.items
         render json: items
     end
 
