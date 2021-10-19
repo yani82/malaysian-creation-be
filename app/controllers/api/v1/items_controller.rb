@@ -1,4 +1,8 @@
 class Api::V1::ItemsController < ApplicationController
+  
+    # before_action :set_category
+
+    # /api/v1/categories/1/items 
     
     def index 
         items = item.all
@@ -25,6 +29,10 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     private
+
+    # def set_category
+    #     category = Category.find(params[:category_id])
+    # end 
 
     def item_params
         params.require(:item).permit(:category_id, :name, :description, :price)
