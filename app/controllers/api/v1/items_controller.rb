@@ -9,18 +9,18 @@ class Api::V1::ItemsController < ApplicationController
         render json: items
     end
 
+    def show 
+        item = Item.find(params[:id])
+        render json: item 
+    end
+
     def create
-        item = Item.new(item_params)
+        item = category.item.build(item_params)
         if item.save 
             render json: item 
         else 
             render json: {error: 'Error creating item'}
         end 
-    end
-
-    def show 
-        item = Item.find(params[:id])
-        render json: item 
     end
 
     def destroy
