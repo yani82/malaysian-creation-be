@@ -4,9 +4,9 @@ class Api::V1::ItemsController < ApplicationController
 
     # /api/v1/categories/1/items 
     
-    def index 
-        items = categories.items
-        render json: items
+    def index  
+            items = Item.all 
+        render json: items 
     end
 
     def show 
