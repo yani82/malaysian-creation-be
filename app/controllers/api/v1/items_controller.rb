@@ -5,7 +5,7 @@ class Api::V1::ItemsController < ApplicationController
     # /api/v1/categories/1/items 
     
     def index  
-            items = Item.all 
+        items = Item.all 
         render json: items 
     end
 
@@ -15,8 +15,8 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def create
-        item = category.item.build(item_params)
-        if item.save 
+        item = category.items.new(item_params)
+        if category.name(@item) != 'Item does not exist' 
             render json: item 
         else 
             render json: {error: 'Error creating item'}
