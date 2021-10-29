@@ -16,10 +16,11 @@ class Api::V1::ItemsController < ApplicationController
 
     def create
         item = category.items.new(item_params)
-        if category.name(@item) != 'Item does not exist' 
-            render json: item 
+        if category.name(item) != 'Item does not exist' 
+            item.save
+            render json: category 
         else 
-            render json: {error: 'Error creating item'}
+            render json: {error: 'Item does not exist'}
         end 
     end
 
