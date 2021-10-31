@@ -25,6 +25,14 @@ class Api::V1::CategoriesController < ApplicationController
         category.destroy
     end
 
+    def update
+        # binding.pry
+        category = Category.find(params[:id])
+        category.update(name: params["category"]["name"])
+        category.save
+        render json: category 
+    end 
+
     private
 
     def category_params
