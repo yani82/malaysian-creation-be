@@ -15,9 +15,10 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def create
-        item = Item.create(name: item_params[:name], category_id: item_params[:category_id]) 
-        render json: item 
         # byebug;
+        item = Item.create(name: item_params[:name], description: item_params[:description], price: item_params[:price], category_id: item_params[:category_id]) 
+        byebug; 
+        render json: item 
         # item = category.items.new(item_params)
         # if category.name(item) != 'Item does not exist' 
         #     item.save
