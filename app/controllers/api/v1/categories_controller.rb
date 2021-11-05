@@ -5,8 +5,7 @@ class Api::V1::CategoriesController < ApplicationController
             render json: categories
     end
 
-    def create
-        # binding.pry 
+    def create 
         category = Category.new(category_params)
         if category.save 
             render json: category 
@@ -26,7 +25,6 @@ class Api::V1::CategoriesController < ApplicationController
     end
 
     def update
-        # binding.pry
         category = Category.find(params[:id])
         category.update(name: params["category"]["name"])
         category.save
