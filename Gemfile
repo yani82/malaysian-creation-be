@@ -16,6 +16,7 @@ gem 'puma', '~> 4.1'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'active_model_serializers'
+gem 'dotenv-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -43,7 +44,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-source 'https://rubygems.org'
 gem 'ddtrace', require: 'ddtrace/auto_instrument'
-gem 'datadog_api_client'
+gem 'datadog_api_client', :git => 'https://github.com/DataDog/datadog-api-client-ruby.git'
+ 
 
