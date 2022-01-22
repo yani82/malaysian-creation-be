@@ -16,6 +16,7 @@ task :my_task => :environment do
     begin
     # Get all dashboard lists
     result = api_instance.list_dashboard_lists
+    # result = api_instance.get_ip_ranges
     p result
     rescue DatadogAPIClient::V1::APIError => e
     puts "Error when calling DashboardListsAPI->list_dashboard_lists: #{e}"
