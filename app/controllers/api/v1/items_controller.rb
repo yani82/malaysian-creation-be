@@ -16,11 +16,12 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def destroy
-        item = Item.find(params[:id])
-        # or["id"]? 
-        category = Category.find(item.category_id)
+        binding.pry
+        item = Item.find(params["id"])
+        # or[:id]? 
+        # category = Category.find(item.category_id)
         item.destroy
-        render json: category 
+        render json: item 
     end
 
     private
